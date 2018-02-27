@@ -1,5 +1,3 @@
-package princetonassignments;
-
 import java.util.*;
 
 public class mergeSort {
@@ -44,20 +42,17 @@ public class mergeSort {
 
 	//Called function which creates the smallest lists and then sorts them using merge
 	public static void mergesort(int[] a) {
-		System.out.println("I was here");
 		int n = a.length;
 		if (n<2) {
 			return;
 					
 		}
-		System.out.println("I was here 53");
 		int a_mid = n/2;
 		int[] l1 = new int [a_mid];
 		int[] r1 = new int [n-a_mid];
 		for (int i = 0; i<a_mid;i++) {
 			l1[i] = a[i];
 		}
-		System.out.println("I was here 60");
 		for (int i = a_mid; i <n;i++) {
 			r1[i-a_mid] = a[i];
 		}
@@ -66,20 +61,21 @@ public class mergeSort {
 		merge(a, l1, r1);
 	}
 	public static void main(String[] args) {
-//		Scanner reader = new Scanner(System.in);
-//		System.out.println("What is the length of your list? "); 
-//		int n = reader.nextInt();
-//		int[] arr = new int[n];
-//		System.out.println("Print each of the items in your list one by one");
-//		for (int index = 0; index < n; index += 1) {	
-//			arr[index] = reader.nextInt();
-//		}
-//		System.out.println("No more inputs");
-//		reader.close();
-//		System.out.println(Arrays.toString(arr));
-		int[] a = new int[]{23, 234, 4,5, 6,765,3,7,543,2,46,8,54,23,678,765,2,34,86};
-		mergesort(a);
-		System.out.println(Arrays.toString(a));
+		Scanner reader = new Scanner(System.in);
+		System.out.println("What is the length of your list? "); 
+		int n = reader.nextInt();
+		int[] arr = new int[n];
+		System.out.println("Print each of the items in your list one by one");
+		for (int index = 0; index < n; index += 1) {	
+			arr[index] = reader.nextInt();
+		}
+		System.out.println("No more inputs");
+		reader.close();
+		System.out.println("Original List:");
+		System.out.println(Arrays.toString(arr));
+		mergesort(arr);
+		System.out.println("Sorted List: ");
+		System.out.println(Arrays.toString(arr));
 		}
 	}
 
